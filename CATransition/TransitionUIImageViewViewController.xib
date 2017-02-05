@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D17a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransitionUIImageViewViewController">
+            <connections>
+                <outlet property="imageView" destination="cDr-TY-FmQ" id="yeg-is-yFa"/>
+                <outlet property="segmentedControl" destination="Qma-Zg-EJZ" id="Oxo-Of-pqG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_0.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cDr-TY-FmQ">
+                    <rect key="frame" x="8" y="443" width="359" height="216"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="cDr-TY-FmQ" secondAttribute="height" multiplier="343:206" id="AFp-pK-uzS"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="bnu-DP-2pb" appends="YES" id="Kw4-qR-Q8a"/>
+                    </connections>
+                </imageView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qma-Zg-EJZ">
+                    <rect key="frame" x="8" y="407" width="359" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="I8K-1P-CMX"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Left"/>
+                        <segment title="Right"/>
+                        <segment title="Top"/>
+                        <segment title="Bottom"/>
+                    </segments>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </segmentedControl>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vfL-Ih-YQR">
+                    <rect key="frame" x="8" y="8" width="359" height="391"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="bQs-h2-6Kd"/>
+                        <outlet property="delegate" destination="-1" id="3g1-p5-UxV"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" name="knobColor" catalog="System" colorSpace="catalog"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Qma-Zg-EJZ" secondAttribute="trailing" constant="8" id="3dG-TD-NCs"/>
+                <constraint firstAttribute="trailing" secondItem="cDr-TY-FmQ" secondAttribute="trailing" constant="8" id="ApA-hY-eKf"/>
+                <constraint firstItem="vfL-Ih-YQR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="FKG-xu-JA6"/>
+                <constraint firstItem="Qma-Zg-EJZ" firstAttribute="top" secondItem="vfL-Ih-YQR" secondAttribute="bottom" constant="8" id="Gxw-M0-sAc"/>
+                <constraint firstItem="cDr-TY-FmQ" firstAttribute="top" secondItem="Qma-Zg-EJZ" secondAttribute="bottom" constant="8" id="Rqn-EK-Ykp"/>
+                <constraint firstItem="cDr-TY-FmQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cFe-wg-BsS"/>
+                <constraint firstItem="cDr-TY-FmQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="efb-vR-zJw"/>
+                <constraint firstItem="Qma-Zg-EJZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="fYA-zo-SG5"/>
+                <constraint firstAttribute="trailing" secondItem="vfL-Ih-YQR" secondAttribute="trailing" constant="8" id="gMs-43-7Kc"/>
+                <constraint firstAttribute="bottom" secondItem="cDr-TY-FmQ" secondAttribute="bottom" constant="8" id="i5e-VZ-KoN"/>
+                <constraint firstItem="vfL-Ih-YQR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="wcp-hJ-9su"/>
+            </constraints>
+            <point key="canvasLocation" x="-211.5" y="55.5"/>
+        </view>
+        <tapGestureRecognizer id="bnu-DP-2pb">
+            <connections>
+                <action selector="transitionAction:" destination="-1" id="v53-3t-zoD"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="image_0.jpg" width="1280" height="768"/>
+    </resources>
+</document>
